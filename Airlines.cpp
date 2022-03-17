@@ -4,7 +4,7 @@ using namespace std;
 
 void del_bom(void);
 void bbi_del(void);
-void del_blr(void); // Hi git Log
+void del_blr(void); 
 
 int main(){
     char src[10],des[10];
