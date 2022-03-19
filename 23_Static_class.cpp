@@ -1,17 +1,13 @@
-/*Static Functions: - It can acess only Static Member
-   - Can be Used without creating object*/
-
 #include<iostream>
 using namespace std;
-class India{
+class Railways{
     public:
-    static void display(){
-        cout<<"Hello Mam\n";
-    }
-
+    char train[10];
 };
 
+char Railways :: train[10] = 'Rajdhani Express';
+
 int main (){
-    India :: display();  // Calling Function without Object of Class
+    
 return 0;
 }
