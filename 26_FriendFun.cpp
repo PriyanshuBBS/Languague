@@ -25,7 +25,7 @@ public:
 };
 
 complex sumcomplex(complex o1, complex o2)   // Returning the object, Hence the return type is class
-{
+{                                            // If not returning, Then it is void <return type>
   complex o3;
   o3.setnumber((o1.a + o2.a), (o1.b + o2.b));
   return o3;
