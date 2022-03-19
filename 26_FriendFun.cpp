@@ -1,4 +1,4 @@
-// Friend Function
+// *****************     Friend Functions     ***************
 
 #include <iostream>
 using namespace std;
