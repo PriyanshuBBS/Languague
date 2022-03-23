@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string.h>
+#include<stdlib.h>
 using namespace std;
 
 void del_bom(void);
@@ -9,13 +10,14 @@ void del_blr(void);
 int main(){
     char src[10],des[10];
     char del[5]="DEL",bom[5]="BOM",blr[5]="BLR",bbi[5]="bbi";
-    int date;
+    char date[20];
     
     cout<<"\n\n\t\t ************     Airlines Reservation System [Priyanshu & Gaurav]  ************ \n\n";
     cout<<"Available Routes : 1. Delhi(DEL) - Mumbai(BOM)  2. Delhi(Del) - BLR(Bangalore)  3. Bhubaneswar(BBI) - Delhi(DEL)\n\n";
     cout<<"Source: "; cin>>src;
     cout<<"Destination: "; cin>>des;
-    cout<<"Date of Journey: "; cin>>date;
+    cout<<"Date of Journey: "; puts(date);
+    gets(date);
     
     if(strcmp(src,del)==0 && strcmp(des,bom)==0){
             del_bom();
