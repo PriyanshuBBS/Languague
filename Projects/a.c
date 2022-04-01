@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <string.h>
+// #include<stdlib.h>
+
+void del_bom(void);
+void bbi_del(void);
+void del_blr(void);
+void Passenger();
+
+typedef struct air_plane_ticket
+{
+    char name[100];
+    int ticket_number;
+    int seat;
+    int contact_number;
+    char sex[3];
+
+} tic;
+
+int main()
+{
+    int n;
+    char src[10], des[10];
+    char del[5] = "DEL", bom[5] = "BOM", blr[5] = "BLR", bbi[5] = "bbi";
+    char buf[15];
+
+    int FNo;
+
+    printf("\n\n\t\t ****     Airlines Reservation System [Priyanshu, Mayank & Gaurav]  **** \n\n");
+    printf("Available Routes : 1. Delhi(DEL) - Mumbai(BOM)  2. Delhi(Del) - Bangalore(BLR)  3. Bhubaneswar(BBI) - Delhi(DEL)\n\n");
+
+    printf("Source: ");
+    gets(src);
+    printf("Destination: ");
+    gets(des);
+
+    printf("Date of Journey: ");
+    gets(buf);
+
+    if (strcmp(src, del) == 0 && strcmp(des, bom) == 0)
+    {
+        del_bom();
+    }
+
+    else if (strcmp(src, bbi) == 0 && strcmp(des, bom) == 0)
+    {
+        bbi_del();
+    }
+
+    else if (strcmp(src, del) == 0 && strcmp(des, blr) == 0)
+    {
+        del_blr();
+    }
+
+    printf("Number of Passenger \n");
+    scanf("%d", &n);
+    tic per[n];
+    for (int i = 0; i < n; i++)
+    {
+        printf("Details of %d Person\n", i + 1);
+
+        printf("Passenger name \n", i + 1);
+        scanf("%s", &per[i].name);
+
+        printf("Gender \n", i + 1);
+        scanf("%s", &per[i].sex);
+
+        printf("Contact Number \n", i + 1);
+        scanf("%d", &per[i].contact_number);
+
+        printf("Seat No\n", i + 1);
+        scanf("%d", &per[i].seat);
+
+        printf("\n\n");
+    }
+
+    printf("\nSelect Payment Mode: \n 1. Debit/Credit Card \n 2. UPI\n 3. Netbanking\n");
+
+    printf("\n *********** Payment Sucessfull ******** \n");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("***Ticket of Passenger %d***\n", i + 1);
+
+        printf("Passenger name is %s\n", i + 1, per[i].name);
+
+        printf("Seat no. is [%d] \n", i + 1, per[i].seat);
+
+        printf("Gender is %s\n", i + 1, per[i].sex);
+
+        printf("Contact No. is [%d]\n", i + 1, per[i].contact_number);
+
+        printf("Terminal 1 to Terminal 2\n");
+    }
+
+    return 0;
+}
+
+void del_bom(void)
+{
+    printf("\n\t   Fligt No.\t   Airlines \t         Time          \t Fare\n");
+    printf("\t    AI 665  \t  Air India \t   8:00 AM - 10:10 AM  \t 4,300\n");
+    printf("\t    UK 993  \t   Vistara  \t   1:00 PM -  3:00 PM  \t 4,500\n");
+    printf("\t   6E 6261  \t    Indigo  \t   7:45 PM - 10:00 PM  \t 4,800\n\n");
+}
+
+void bbi_del(void)
+{
+    printf("\n\t Fligt No.\t   Airlines \t      Time         \t Fare\n");
+    printf("\t    UK 782  \t   Vistara  \t   20:30 - 22:40   \t 4,300\n");
+    printf("\t   6E 2046  \t    Indigo  \t   19:30 - 21:45   \t 4,300\n");
+    printf("\t   AI 474   \t  Air India \t   21:30 - 23:40   \t 4,100\n\n");
+}
+
+void del_blr(void)
+{
+    printf("\n\t Fligt No.\t   Airlines \t      Time        \t Fare\n");
+    printf("\t    AI 665  \t  Air India \t   8:00 - 10:10   \t 4,300\n");
+    printf("\t    UK 993  \t   Vistara  \t  13:00 - 15:00   \t 4,500\n");
+    printf("\t   6E 6261  \t    Indigo  \t  19:45 - 22:00   \t 4,800\n\n");
+}
