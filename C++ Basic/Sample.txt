@@ -1,0 +1,2 @@
+Hello open() function
+I am Priyanshu
